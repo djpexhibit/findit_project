@@ -27,6 +27,7 @@ angular.module('starter', ['ionic'])
 .controller('myCtrl', function($scope, $ionicModal, $http) {
 	
 	$scope.data = {};
+	$scope.resultsLoaded = false;
 	
 	$scope.submit = function(){
 		
@@ -34,7 +35,12 @@ angular.module('starter', ['ionic'])
 		
 		$http.post(link, {username : $scope.data.username}).then(function(res){
 			//$scope.response = res.data;
-			$scope.response = 'test';
+			$scope.response1 = 'test1';
+			$scope.response2 = 'test2';
+			$scope.response3 = 'test3';
+			$scope.response4 = 'test4';
+			$scope.response5 = 'test5';
+			$scope.resultsLoaded=true;
 		});
 	};
 })
