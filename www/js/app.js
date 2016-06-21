@@ -22,3 +22,19 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+
+.controller('myCtrl', function($scope, $ionicModal, $http) {
+	
+	$scope.data = {};
+	
+	$scope.submit = function(){
+		
+		var link = 'http://nikola-breznjak.com/_testings/ionicPHP/api.php';
+		
+		$http.post(link, {username : $scope.data.username}).then(function(res){
+			//$scope.response = res.data;
+			$scope.response = 'test';
+		});
+	};
+})
