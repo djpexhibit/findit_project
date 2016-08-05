@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app')
+    .module('findoApp')
     .controller('LoginController', LoginController)
 
   LoginController.$inject = ['$scope', '$state', 'auth', 'store'];

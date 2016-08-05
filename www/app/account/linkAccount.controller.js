@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app')
+    .module('findoApp')
     .controller('LinkAccountController', LinkAccountController)
 
   LinkAccountController.$inject = ['$scope', '$state', 'auth', 'store'];
