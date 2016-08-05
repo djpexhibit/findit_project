@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('findoApp')
         .controller('HomeController', HomeController)
 
     HomeController.$inject = ['$scope', '$state', 'auth', 'store'];
