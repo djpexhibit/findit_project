@@ -30,7 +30,7 @@
 
       auth.linkAccount(token, profile, options,
         function () {
-
+		  	state.go('home');
         },
         function () {
 

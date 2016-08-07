@@ -2,12 +2,13 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title></title>
-
-  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title></title>
+	
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/findo.css" rel="stylesheet">
 
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -34,53 +35,28 @@
   <script src="app/home/home.controller.js"></script>
   <script src="app/account/login.controller.js"></script>
   <script src="app/account/linkAccount.controller.js"></script>
+  <script src="app/search/search.controller.js"></script>
 </head>
 
-<body ng-app="findoApp" ng-controller="myCtrl">
-  <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
+<body ng-app="findoApp">
 	<ion-pane>
+		
+		<ion-nav-bar class="bar bar-header findo-nav-header" align-title="center">
+			<ion-nav-back-button>
+			</ion-nav-back-button>
 			
-			<ion-header-bar class="bar-calm">
-				<button class="button icon ion-navicon"></button>
-				<h1 class="title">Find It</h1>
-				<button class="button icon ion-home"></button>
-			</ion-header-bar>
+			<ion-nav-title>
+				<span>FinDo</span>
+			</ion-nav-title>
 			
-			<ion-content>
-				<form ng-submit="submit()">
-					<div class="list">
-						<label class="item item-input item-stacked-label">
-							<input type="text" placeholder="Find It..." ng-model="query" name="query">
-						</label>
-					</div>
-					
-					<input class="button button-block button-positive" type="submit" name="submit" value="Search">
-				</form>
-				
-				<div id="results_list" ng-include="'partials/results_list.html'" class="col-md-8" ng-show="resultsLoaded"></div>
-				
-				
-			</ion-content>
-			
-			<ion-footer-bar align-title="center" class="bar-calm">
-				<button class="button icon ion-navicon"></button>
-				<button class="button icon ion-home"></button>
-				<button class="button icon ion-star"></button>
-				<button class="button icon ion-checkmark-round"></button>
-			</ion-footer-bar>
-  <ion-nav-bar class="bar-stable">
-    <ion-nav-back-button>
-	</ion-nav-back-button>
-  </ion-nav-bar>
-  <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-  <ion-nav-view></ion-nav-view>
-  </ion-pane>
+			<ion-nav-buttons side="right">
+        		<button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+		
+		<ion-nav-view></ion-nav-view>
+	
+	</ion-pane>
   
 	
 </body>

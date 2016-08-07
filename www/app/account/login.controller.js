@@ -24,7 +24,7 @@
         store.set('accessToken', accessToken);
         store.set('refreshToken', refreshToken);
         
-         $state.go("home");
+         $state.go("search");
       }, function () {
         // Error callback
       });
