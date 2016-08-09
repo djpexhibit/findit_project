@@ -1,0 +1,49 @@
+.findo-search-box{
+	margin-top: 40%;
+	
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+
+.findo-button{
+	background-color: #8afc6b !important;
+	width: 100%;
+	vertical-align:middle;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	display: block;
+ 
+}
+
+.findo-nav-header{
+	background-color: #9c9c9c;
+	color: black; 	
+}
+
+
+
+.findo-outer{
+	margin-top: 15px;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+
+.findo-tile{
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 42px;
+    margin: 1px;
+    min-height: 47px;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    vertical-align: top;
+	
+	-moz-box-flex: 0;
+    flex: 0 0 48%;
+    max-width: 48%;
+}
