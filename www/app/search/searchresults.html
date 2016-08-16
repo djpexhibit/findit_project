@@ -1,14 +1,15 @@
 <ion-view  class="galleryView">
 	<ion-content>
 		<ion-list>
-			<a ui-sref="item-detail">
+			
 			<div class="row row-wrap findo-outer">
 				<ion-item ng-repeat="item in items" class="col findo-tile button-icon light animated bounceInUp" ng-style="{ 'background-color' : item.color }" on-tap="openItem(item)">
-					<i class="icon {{item.icon}}"></i>
-					<p class="bold">{{ item.title }}</p>
+					<a ui-sref="item-detail">
+						<i class="icon {{item.icon}}"></i>
+						<p class="bold">{{ item.title }}</p>
+					</a>
 				</ion-item>
 			</div>
-			</a>
 		</ion-list>
 	</ion-content>
 </ion-view>

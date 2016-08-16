@@ -81,6 +81,16 @@ findoApp.config(function ($stateProvider, $urlRouterProvider, authProvider, $htt
 		url: '/searchresults',
 		templateUrl: 'app/search/searchresults.html',
 		controller: 'searchResultsCtrl'
+	})
+	
+	.state('item-detail', { 
+		url: '/item-detail',
+		templateUrl: 'app/search/itemdetail.html'
+	})
+	
+	.state('advanced-filters', { 
+		url: '/advanced-filters',
+		templateUrl: 'app/search/advancedSearchFilters.html'
 	});
 	
 	authProvider.init({
