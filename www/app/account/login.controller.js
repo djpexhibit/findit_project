@@ -5,32 +5,52 @@
     .module('findoApp')
     .controller('LoginController', LoginController)
 
-  LoginController.$inject = ['$scope', '$state', 'auth', 'store'];
+  LoginController.$inject = ['$state', '$ionicPopup', 'auth', 'store'];
 
-  function LoginController($scope, $state, auth, store) {
+  function LoginController($state, $ionicPopup, auth, store) {
     var vm = this;
 
-    function doLogin() {
+    vm.login = login;
+    vm.loginWithGoogle = loginWithGoogle;
+
+    // Log in with username and password
+    function login() {
       auth.signin({
-        container: 'lock-container',
+        connection: 'Database-Connection',
+        username: vm.username,
+        password: vm.password,
         authParams: {
-          scope: 'openid offline_access',
-          device: 'Mobile device'
+          scope: 'openid name email' //Details: https://auth0.com/docs/scopes
         }
-      }, function (profile, token, accessToken, state, refreshToken) {
-        // Success callback
-        store.set('profile', profile);
-        store.set('token', token);
-        store.set('accessToken', accessToken);
-        store.set('refreshToken', refreshToken);
-        
-         $state.go("search");
-      }, function () {
-        // Error callback
-      });
+      }, onLoginSuccess, onLoginFailed);
     }
 
-    doLogin();
+    // Log in with Google
+    function loginWithGoogle() {
+      auth.signin({
+        popup: true,
+        connection: 'google-oauth2',
+        scope: 'openid name email' //Details: https://auth0.com/docs/scopes
+      }, onLoginSuccess, onLoginFailed);
+    }
+
+    // Login success callback which saves the user's tokens and redirects back to home 
+    function onLoginSuccess(profile, token, accessToken, state, refreshToken) {
+      store.set('profile', profile);
+      store.set('token', token);
+      store.set('accessToken', accessToken);
+      store.set('refreshToken', refreshToken);
+
+      $state.go("home");
+    }
+
+    // Login fall callback which displays error message
+    function onLoginFailed() {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Login failed!',
+        template: 'Please check your credentials!'
+      });
+    }
   }
-  
+
 } ());
