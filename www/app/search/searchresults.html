@@ -1,15 +1,33 @@
 <ion-view  class="galleryView">
 	<ion-content>
-		<ion-list>
-			
-			<div class="row row-wrap findo-outer">
-				<ion-item ng-repeat="item in items" class="col findo-tile button-icon light animated bounceInUp" ng-style="{ 'background-color' : item.color }" on-tap="openItem(item)">
-					<a ui-sref="item-detail">
-						<i class="icon {{item.icon}}"></i>
-						<p class="bold">{{ item.title }}</p>
-					</a>
-				</ion-item>
-			</div>
-		</ion-list>
+		<div class="findo-search-box-inside">
+			<form ng-submit="submit()">
+				<div class="row">
+					<div style="margin-right:5%;">
+						<label class="item item-input findo-input-label">
+							<i class="icon ion-search placeholder-icon"></i>
+							<input type="text" placeholder="Find It..." ng-model="query" name="query">
+						</label>
+					</div>
+					<input class="findo-button-inside" type="submit" name="submit" value="Search">
+				</div>
+
+				
+			</form>
+		</div>
+		
+		<div class="findo-outer">
+			<ion-list>
+
+				<div class="row row-wrap">
+					<ion-item ng-repeat="item in items" back-img="{{item.imgurl}}" class="col findo-tile button-icon light animated bounceInUp" ng-style="{ 'background-color' : item.color }" on-tap="openItem(item)">
+						<a ui-sref="item-detail">
+							<i class="icon {{item.icon}}"></i>
+							<p class="bold">{{ item.title }}</p>
+						</a>
+					</ion-item>
+				</div>
+			</ion-list>
+		</div>
 	</ion-content>
 </ion-view>

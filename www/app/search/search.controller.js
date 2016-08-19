@@ -1,7 +1,12 @@
-findoApp.controller('searchCtrl',function($scope,$state){
+findoApp.controller('searchCtrl',function($scope,$state, $ionicLoading, $ionicPlatform){
 	
 	$scope.submit=function(){
-		$state.go('searchresults');	
+		$ionicPlatform.ready(function(){
+			$ionicLoading.show({template: "Loading ..."});
+			$state.go('searchresults');
+			$ionicLoading.hide();
+		});
+			
 	}
 });
 
@@ -11,32 +16,38 @@ findoApp.controller('searchResultsCtrl',function($scope,$state){
             {
                 color: "#5AD863",
                 icon: "ion-ionic",
-                title: "Item1"
+                title: "Item1",
+				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#5AD863",
                 icon: "ion-ionic",
-                title: "Item2"
+                title: "Item2",
+				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#5AD863",
                 icon: "ion-ionic",
-                title: "Item3"
+                title: "Item3",
+				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#5AD863",
                 icon: "ion-ionic",
-                title: "Item4"
+                title: "Item4",
+				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#3DBEC9",
                 icon: "ion-ionic",
-                title: "Item5"
+                title: "Item5",
+				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#3DBEC9",
                 icon: "ion-ionic",
-                title: "Item6"
+                title: "Item6",
+				imgurl: "/img/findo/1.jpg"
             }
         ];
 });

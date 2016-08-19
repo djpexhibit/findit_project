@@ -1,5 +1,5 @@
 
-var findoApp = angular.module('findoApp', ['ionic', 'auth0', 'angular-storage', 'angular-jwt']).run(
+var findoApp = angular.module('findoApp', ['ionic', 'auth0', 'angular-storage', 'angular-jwt', 'ngCordova']).run(
 	function ($ionicPlatform, $rootScope, auth, store, jwtHelper, $location) {
 		$ionicPlatform.ready(function () {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -84,7 +84,7 @@ findoApp.config(function ($stateProvider, $urlRouterProvider, authProvider, $htt
 	})
 	
 	.state('item-detail', { 
-		url: '/item-detail',
+		url: '/item-detail:itemId',
 		templateUrl: 'app/search/itemdetail.html'
 	})
 	
@@ -122,6 +122,18 @@ findoApp.controller('myCtrl', function($scope, $ionicModal, $http) {
 			$scope.response4 = 'test4';
 			$scope.response5 = 'test5';
 			$scope.resultsLoaded=true;
+		});
+	};
+});
+
+
+findoApp.directive('backImg', function(){
+	return function(scope, element, attrs){
+		var url = attrs.backImg;
+		//var content = element.find('a');
+		element.css({
+			'background-image': 'url(' + url +')',
+			'background-size' : 'cover'
 		});
 	};
 });
