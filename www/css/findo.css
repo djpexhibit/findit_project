@@ -82,6 +82,7 @@
 .findo-tile{
     border-style: solid;
     border-width: 1px;
+	border-color: #f1f1f1;
     cursor: pointer;
     font-size: 16px;
     line-height: 42px;
@@ -138,5 +139,5 @@
 }
 
 .findo-search-result{
-	background-color: #f1f1f1;
+	background-color: #fff;
 }
