@@ -14,37 +14,37 @@ findoApp.controller('searchCtrl',function($scope,$state, $ionicLoading, $ionicPl
 findoApp.controller('searchResultsCtrl',function($scope,$state){
 	$scope.items = [
             {
-                color: "#5AD863",
+                color: "#ffffff",
                 icon: "ion-ionic",
                 title: "Item1",
-				imgurl: "/img/findo/1.jpg"
+				imgurl: "img/findo/1.jpg"
             },
             {
-                color: "#5AD863",
+                color: "#ffffff",
                 icon: "ion-ionic",
                 title: "Item2",
 				imgurl: "/img/findo/1.jpg"
             },
             {
-                color: "#5AD863",
+                color: "#ffffff",
                 icon: "ion-ionic",
                 title: "Item3",
 				imgurl: "/img/findo/1.jpg"
             },
             {
-                color: "#5AD863",
+                color: "#ffffff",
                 icon: "ion-ionic",
                 title: "Item4",
 				imgurl: "/img/findo/1.jpg"
             },
             {
-                color: "#3DBEC9",
+                color: "#fff",
                 icon: "ion-ionic",
                 title: "Item5",
 				imgurl: "/img/findo/1.jpg"
             },
             {
-                color: "#3DBEC9",
+                color: "#fff",
                 icon: "ion-ionic",
                 title: "Item6",
 				imgurl: "/img/findo/1.jpg"
