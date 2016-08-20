@@ -41,7 +41,7 @@
       store.set('accessToken', accessToken);
       store.set('refreshToken', refreshToken);
 
-      $state.go("home");
+      $state.go("search");
     }
 
     // Login fall callback which displays error message
