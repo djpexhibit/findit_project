@@ -23,14 +23,17 @@
 					<ion-item ng-repeat="item in items"  class="col findo-tile button-icon light animated bounceInUp" ng-style="{ 'background-color' : item.color }" on-tap="openItem(item)">
 						<a ui-sref="item-detail">
 							<!-- <i class="icon {{item.icon}}"></i> -->
-							<div>
+							<div class="findo-image-container">
 								<img ng-src="{{item.imgurl}}" />
+								<div class="findo-call-icon">
+									<i class="icon ion-android-call " ></i>
+								</div>
 							</div>
-							<div class="row">
-								<div class="col col-80">
+							<div>
+								<div class="findo-search-item-name">
 									<p class="bold">{{ item.title }}</p>
 								</div>
-								<i class="icon ion-android-call"></i>
+								
 							</div>
 							
 						</a>

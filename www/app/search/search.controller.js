@@ -3,6 +3,7 @@ findoApp.controller('searchCtrl',function($scope,$state, $ionicLoading, $ionicPl
 	$scope.submit=function(){
 		$ionicPlatform.ready(function(){
 			$ionicLoading.show({template: "Loading ..."});
+			// call service
 			$state.go('searchresults');
 			$ionicLoading.hide();
 		});
@@ -16,19 +17,19 @@ findoApp.controller('searchResultsCtrl',function($scope,$state){
             {
                 color: "#ffffff",
                 icon: "ion-ionic",
-                title: "Item1",
+                title: "Car with long name",
 				imgurl: "img/findo/1.jpg"
             },
             {
                 color: "#ffffff",
                 icon: "ion-ionic",
-                title: "Item2",
+                title: "just a car",
 				imgurl: "/img/findo/1.jpg"
             },
             {
                 color: "#ffffff",
                 icon: "ion-ionic",
-                title: "Item3",
+                title: "car short",
 				imgurl: "/img/findo/1.jpg"
             },
             {
